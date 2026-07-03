@@ -1,0 +1,2069 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b0b0b;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+
+/* ===========================================
+   COLORS
+=========================================== */
+
+:root{
+
+    --black:#0b0b0b;
+
+    --brown:#8B7965;
+
+    --brown-light:#A08D77;
+
+    --white:#ffffff;
+
+    --gray:#d9d9d9;
+
+}
+
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--brown);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--brown-light);
+
+}
+
+
+/* ===========================================
+   SECTION DEFAULT
+=========================================== */
+
+section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:120px 10%;
+
+    position:relative;
+
+}
+
+
+/* ===========================================
+   NAVBAR
+=========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(11,11,11,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.navbar{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+}
+
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    color:white;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.35s;
+
+    font-weight:500;
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--brown-light);
+
+}
+
+
+/* Animated Underline */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    left:0;
+
+    bottom:-8px;
+
+    background:var(--brown);
+
+    transition:.4s;
+
+}
+
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ===========================================
+   HERO SECTION
+=========================================== */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+
+/* LEFT */
+
+.hero-text{
+
+    flex:1;
+
+    animation:fadeLeft 1s ease;
+
+}
+
+
+.hero-text h2{
+
+    font-size:72px;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+}
+
+
+.hero-text h1{
+
+    font-size:88px;
+
+    line-height:90px;
+
+    margin-bottom:25px;
+
+    color:white;
+
+}
+
+
+.hero-text p{
+
+    width:90%;
+
+    color:#d8d8d8;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+}
+
+
+/* BUTTON */
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 45px;
+
+    border-radius:50px;
+
+    background:var(--brown);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--brown-light);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.45);
+
+}
+
+
+/* RIGHT */
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.hero-image img{
+
+    width:420px;
+
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    border:5px solid rgba(255,255,255,.08);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+
+/* ===========================================
+   HERO DECORATIONS
+=========================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:rgba(139,121,101,.15);
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    right:-120px;
+
+    top:100px;
+
+    z-index:-1;
+
+}
+
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:50%;
+
+    left:-100px;
+
+    bottom:80px;
+
+    filter:blur(60px);
+
+    z-index:-1;
+
+}
+
+
+/* ===========================================
+   SECTION TITLE
+=========================================== */
+
+.section-title{
+
+    font-size:60px;
+
+    margin-bottom:60px;
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+}
+
+
+/* ===========================================
+   FLOAT ANIMATION
+=========================================== */
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* ===========================================
+   FADE LEFT
+=========================================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* ===========================================
+   MOBILE
+=========================================== */
+
+@media(max-width:1000px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .nav-links{
+
+        gap:20px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+    }
+
+    .hero-text p{
+
+        width:100%;
+
+    }
+
+    .hero-text h2{
+
+        font-size:52px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:62px;
+
+        line-height:70px;
+
+    }
+
+    .hero-image img{
+
+        width:320px;
+
+        height:420px;
+
+    }
+
+}
+
+/* ===========================================
+   WHY I ADMIRE HIM
+=========================================== */
+
+.admire{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+    position:relative;
+}
+
+.admire::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(139,121,101,.12);
+    border-radius:50%;
+    filter:blur(100px);
+    left:-120px;
+    top:50px;
+    z-index:-1;
+}
+
+.admire-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.admire-image img{
+    width:350px;
+    height:500px;
+    object-fit:cover;
+    border-radius:25px;
+    border:4px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+    transition:.4s;
+}
+
+.admire-image img:hover{
+    transform:scale(1.03);
+}
+
+.admire-card{
+    flex:1.2;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    transition:.4s;
+}
+
+.admire-card:hover{
+    transform:translateY(-10px);
+}
+
+.admire-card h2{
+    font-size:42px;
+    margin-bottom:25px;
+    color:var(--brown-light);
+}
+
+.admire-card p{
+    color:#d8d8d8;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
+
+/* ===========================================
+   PROFILE
+=========================================== */
+
+#profile{
+    position:relative;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+.profile-info{
+    flex:1;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.profile-info p{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:#d8d8d8;
+    font-size:17px;
+}
+
+.profile-info strong{
+    color:var(--brown-light);
+}
+
+.profile-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.profile-image img{
+    width:450px;
+    height:545px;
+    object-fit:cover;
+    border-radius:30px;
+    border:5px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+    transition:.4s;
+}
+
+.profile-image img:hover{
+    transform:scale(1.05);
+}
+
+
+/* ===========================================
+   BACKGROUND
+=========================================== */
+
+#background{
+    position:relative;
+}
+
+.background-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+.background-text{
+    flex:1.2;
+}
+
+.background-text ul{
+    list-style:none;
+}
+
+.background-text li{
+    margin-bottom:18px;
+    padding:18px 22px;
+    background:rgba(255,255,255,.04);
+    border-left:5px solid var(--brown);
+    border-radius:12px;
+    color:#d9d9d9;
+    transition:.35s;
+    line-height:1.7;
+}
+
+.background-text li:hover{
+    transform:translateX(12px);
+    background:rgba(255,255,255,.08);
+}
+
+.background-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.background-image img{
+    width:400px;
+    height:520px;
+    object-fit:cover;
+    border-radius:25px;
+    border:4px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+    transition:.4s;
+}
+
+.background-image img:hover{
+    transform:scale(1.03);
+}
+
+
+/* ===========================================
+   SECTION DECORATIONS
+=========================================== */
+
+#profile::after,
+#background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    background:rgba(139,121,101,.12);
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    z-index:-1;
+
+}
+
+#profile::after{
+
+    right:-120px;
+
+    top:120px;
+
+}
+
+#background::before{
+
+    left:-120px;
+
+    bottom:80px;
+
+}
+
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:1000px){
+
+.admire,
+.profile-container,
+.background-container{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.admire-image img,
+.profile-image img,
+.background-image img{
+
+    width:320px;
+    height:420px;
+
+}
+
+.profile-info{
+
+    width:100%;
+
+}
+
+.background-text{
+
+    width:100%;
+
+}
+
+.background-text li{
+
+    text-align:left;
+
+}
+
+.admire-card{
+
+    width:100%;
+
+}
+
+}
+
+/* ===========================================
+   GALLERY SECTION
+=========================================== */
+
+#gallery{
+    position: relative;
+}
+
+#gallery::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:rgba(139,121,101,.12);
+    border-radius:50%;
+    filter:blur(100px);
+    top:100px;
+    right:-120px;
+    z-index:-1;
+}
+
+/* Gallery Grid */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+/* Gallery Card */
+
+.gallery-grid img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.45s ease;
+    border:3px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+/* Hover Animation */
+
+.gallery-grid img:hover{
+    transform:translateY(-10px) scale(1.04);
+    border-color:var(--brown);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.55),
+        0 0 25px rgba(139,121,101,.35);
+}
+
+
+/* ===========================================
+   OPTIONAL IMAGE WRAPPER
+=========================================== */
+
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    gap: 16px;
+    transition: 0.3s;
+}
+
+.container li{
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 80px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1.2px solid white;
+    box-shadow: 5px 10px 15px black, -2px -5px 10px black;
+}
+
+.container li img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container li,
+.container li img 
+
+{
+    transition: 0.3s;
+}
+.container li .content{
+    transition: 1.5s ease;
+}
+.container span{
+    text-align: center;
+    width: 75%;
+}
+
+.container h2{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 4px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    color: white;
+}
+
+.container p{
+    color: white;
+    font-size: 10px;
+    width: 100%;
+}
+
+.container li .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: white;
+    padding: 15px;
+    background:
+    linear-gradient(
+        0deg, rgba(0, 0, 0, 0.103) 10%, rgba(125, 119, 119, 0) 100%) ;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container:hover{
+    gap: 0;
+}
+
+.container li .content span{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 0px;
+    translate: -50%;
+    scale: 0.85;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container li:hover{
+    flex: 0 1 260px;
+    scale: 1.1;
+    z-index: 10;
+    opacity: 1;
+}
+
+.container li:hover .content{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container li:hover span{
+    scale: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===========================================
+   SONGS SECTION
+=========================================== */
+
+#songs{
+    position:relative;
+}
+
+#songs::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(139,121,101,.12);
+    border-radius:50%;
+    filter:blur(100px);
+    left:-120px;
+    top:120px;
+    z-index:-1;
+}
+
+.song-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
+    margin-top:50px;
+
+}
+
+.song-card{
+    width:320px;
+    background:#111;
+    border:1px solid white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    margin:20px;
+    display:inline-block;
+}
+
+.song-card h3{
+    color:white;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.artist{
+    color:#bdbdbd;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.song-card audio{
+    width:94%;
+}
+
+
+
+
+/* ===========================================
+   VIDEOS SECTION
+=========================================== */
+.video-section{
+    text-align: center;
+    padding-top:100px;
+}
+
+.video-section h1{
+    color:white;
+    font-size:70px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.video-section .line{
+    width:220px;
+    height:5px;
+    background:rgba(183, 122, 52, 0.712);
+    margin:auto;
+    border-radius:5px;
+    margin-bottom:60px;
+}
+
+
+
+.video-card{
+    display: inline-block;
+    margin: 20px;
+}
+.video-card video{
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+
+/* ===========================================
+   CARD TITLE (OPTIONAL)
+=========================================== */
+
+
+.card-info{
+
+    padding:18px;
+
+}
+
+.card-info h3{
+
+    color:white;
+
+    font-size:20px;
+
+    margin-bottom:6px;
+
+}
+
+.card-info p{
+
+    color:#bbbbbb;
+
+    font-size:15px;
+
+}
+
+
+/* ===========================================
+   FADE ANIMATION
+=========================================== */
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.song-card,
+.video-card{
+
+    animation:cardFade .8s ease;
+
+}
+
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:900px){
+
+.song-grid,
+.video-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.song-card img{
+
+    height:360px;
+
+}
+
+.video-card img{
+
+    height:260px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.song-card img{
+
+    height:300px;
+
+}
+
+.video-card img{
+
+    height:220px;
+
+}
+
+}
+
+/* ===========================================
+   FOOTER
+=========================================== */
+
+footer{
+
+    background:#080808;
+
+    padding:70px 10% 30px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    position:relative;
+
+}
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:rgba(139,121,101,.10);
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    top:-120px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+footer h2{
+
+    font-size:40px;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    color:#bbbbbb;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+/* ===========================================
+   SOCIAL ICONS
+=========================================== */
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin:35px 0;
+
+}
+
+.social-icons a{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#181818;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+    font-size:22px;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--brown);
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 10px 25px rgba(139,121,101,.45);
+
+}
+
+
+/* ===========================================
+   COPYRIGHT
+=========================================== */
+
+.copyright{
+
+    margin-top:35px;
+
+    color:#888;
+
+    font-size:14px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+}
+
+
+/* ===========================================
+   BACK TO TOP BUTTON
+=========================================== */
+
+.top-btn{
+
+    position:fixed;
+
+    bottom:35px;
+
+    right:35px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--brown);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    z-index:999;
+
+}
+
+.top-btn:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--brown-light);
+
+}
+
+
+/* ===========================================
+   GLOBAL CARD EFFECT
+=========================================== */
+
+.admire-card,
+.profile-info,
+.song-card,
+.video-card{
+
+    transition:.45s ease;
+
+}
+
+.admire-card:hover,
+.profile-info:hover{
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.45),
+
+    0 0 25px rgba(139,121,101,.18);
+
+}
+
+
+/* ===========================================
+   IMAGE HOVER EFFECT
+=========================================== */
+
+.hero-image img,
+.profile-image img,
+.background-image img,
+.admire-image img{
+
+    transition:.5s;
+
+}
+
+.hero-image img:hover,
+.profile-image img:hover,
+.background-image img:hover,
+.admire-image img:hover{
+
+    transform:scale(1.04);
+
+}
+
+
+/* ===========================================
+   SECTION SPACING
+=========================================== */
+
+section{
+
+    padding-top:130px;
+
+    padding-bottom:130px;
+
+}
+
+
+/* ===========================================
+   TEXT SELECTION
+=========================================== */
+
+::selection{
+
+    background:var(--brown);
+
+    color:white;
+
+}
+
+
+/* ===========================================
+   INPUTS (FOR FUTURE CONTACT FORM)
+=========================================== */
+
+input,
+textarea{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+button{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+/* ===========================================
+   BEAUTIFUL LINE UNDER TITLES
+=========================================== */
+
+.section-title{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.section-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:70%;
+
+    height:3px;
+
+    left:15%;
+
+    bottom:-15px;
+
+    background:var(--brown);
+
+    border-radius:20px;
+
+}
+
+
+/* ===========================================
+   GLOWING CIRCLES
+=========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(139,121,101,.05);
+
+    filter:blur(120px);
+
+    top:-180px;
+
+    left:-180px;
+
+    z-index:-10;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(139,121,101,.04);
+
+    filter:blur(120px);
+
+    bottom:-180px;
+
+    right:-180px;
+
+    z-index:-10;
+
+}
+
+
+/* ===========================================
+   SMOOTH TRANSITION
+=========================================== */
+
+a,
+button,
+img,
+.card,
+.song-card,
+.video-card{
+
+    transition:.35s ease;
+
+}
+
+
+/* ===========================================
+   FADE EFFECT
+=========================================== */
+
+.fade-up{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===========================================
+   SIMPLE DIVIDER
+=========================================== */
+
+.divider{
+
+    width:120px;
+
+    height:3px;
+
+    background:var(--brown);
+
+    margin:20px auto 50px;
+
+    border-radius:30px;
+
+}
+
+
+/* ===========================================
+   MOBILE FOOTER
+=========================================== */
+
+@media(max-width:768px){
+
+footer{
+
+    padding:60px 8% 30px;
+
+}
+
+footer h2{
+
+    font-size:30px;
+
+}
+
+.social-icons{
+
+    flex-wrap:wrap;
+
+}
+
+.top-btn{
+
+    width:50px;
+
+    height:50px;
+
+    right:20px;
+
+    bottom:20px;
+
+}
+
+}
+
+/* ===========================================
+   PART 5B
+   RESPONSIVE DESIGN
+=========================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Better Images */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Better Buttons */
+
+button,
+.btn{
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+button:hover,
+.btn:hover{
+
+    letter-spacing:1px;
+
+}
+
+/* Better Links */
+
+a{
+
+    transition:.35s ease;
+
+}
+
+
+/* ===========================================
+   HERO IMPROVEMENTS
+=========================================== */
+
+.hero-text h1{
+
+    text-shadow:
+
+    0 0 20px rgba(255,255,255,.08);
+
+}
+
+.hero-image{
+
+    position:relative;
+
+}
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:105%;
+
+    height:105%;
+
+    border:2px solid rgba(139,121,101,.15);
+
+    border-radius:35px;
+
+    animation:borderFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes borderFloat{
+
+    0%{
+
+        transform:rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:rotate(2deg);
+
+    }
+
+    100%{
+
+        transform:rotate(0deg);
+
+    }
+
+}
+
+
+/* ===========================================
+   CARD ANIMATION
+=========================================== */
+
+.song-card,
+.video-card,
+.admire-card,
+.profile-info{
+
+    transition:.45s;
+
+}
+
+.song-card:hover,
+.video-card:hover,
+.admire-card:hover,
+.profile-info:hover{
+
+    transform:translateY(-12px);
+
+}
+
+
+/* ===========================================
+   GALLERY POLISH
+=========================================== */
+
+.gallery-grid{
+
+    align-items:center;
+
+}
+
+.gallery-grid img{
+
+    border-radius:22px;
+
+}
+
+.gallery-grid img:hover{
+
+    filter:brightness(108%);
+
+}
+
+
+/* ===========================================
+   PROFILE IMPROVEMENTS
+=========================================== */
+
+.profile-info{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.profile-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:50%;
+
+    right:-50px;
+
+    top:-50px;
+
+}
+
+.profile-info::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    background:rgba(139,121,101,.12);
+
+    border-radius:50%;
+
+    left:-30px;
+
+    bottom:-30px;
+
+}
+
+
+/* ===========================================
+   SECTION FADE
+=========================================== */
+
+section{
+
+    animation:fadeSection 1s ease;
+
+}
+
+@keyframes fadeSection{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===========================================
+   FOOTER IMPROVEMENTS
+=========================================== */
+
+footer{
+
+    overflow:hidden;
+
+}
+
+footer h2{
+
+    color:white;
+
+}
+
+.social-icons a{
+
+    overflow:hidden;
+
+}
+
+.social-icons a::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(226, 132, 17, 0.842);
+
+    transform:translateY(100%);
+
+    transition:.4s;
+
+}
+
+.social-icons a:hover::before{
+
+    transform:translateY(0);
+
+}
+
+
+/* ===========================================
+   MOBILE RESPONSIVE
+=========================================== */
+
+@media (max-width:992px){
+
+.navbar{
+
+    padding:20px;
+
+}
+
+.hero{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+}
+
+.hero-text{
+
+    width:100%;
+
+}
+
+.hero-text p{
+
+    width:100%;
+
+}
+
+.profile-container,
+.background-container,
+.admire{
+
+    flex-direction:column;
+
+}
+
+.profile-image img,
+.background-image img,
+.admire-image img{
+
+    width:340px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    display:block;
+
+}
+
+}
+
+
+/* Tablet */
+
+@media(max-width:768px){
+
+.nav-links{
+
+    gap:18px;
+
+}
+
+.nav-links a{
+
+    font-size:15px;
+
+}
+
+.hero-text h2{
+
+    font-size:45px;
+
+}
+
+.hero-text h1{
+
+    font-size:58px;
+
+    line-height:65px;
+
+}
+
+.hero-image img{
+
+    width:300px;
+
+    height:400px;
+
+}
+
+.profile-image img,
+.background-image img,
+.admire-image img{
+
+    width:300px;
+
+    height:400px;
+
+}
+
+.gallery-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.song-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.video-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
